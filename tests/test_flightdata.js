@@ -25,4 +25,19 @@ describe('FlightData', function() {
     	throw new Error("not implemented");
     });
   });
+  describe('#get_info_by_tail_number()', function() {
+    it('should return the flight info of that tail number', function() {
+      throw new Error("not implemented");
+    });
+  });
+  describe('#get_flights()', function() {
+    it('should return the flights for that airline', function() {
+      throw new Error("not implemented");
+    });
+  });
+  describe('#get_fleet()', function() {
+    it('should return the fleet details for that airline', function() {
+      throw new Error("not implemented");
+    });
+  });
 });
