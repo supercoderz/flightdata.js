@@ -1,7 +1,7 @@
 var assert = require('assert');
 var flightdata = require('../lib/flightdata.js');
 
-describe('FlightData', function() {
+describe('FlightData - basic tests', function() {
   describe('#get_airlines()', function() {
     it('should return a list of airlines in the world', function() {
     	flightdata.get_airlines().length>0;
@@ -13,33 +13,25 @@ describe('FlightData', function() {
     });
   });
   describe('#get_countries()', function() {
-    xit('should return a list of countries in the world', function() {
-    	throw new Error("not implemented");
+    it('should return a list of countries in the world', function() {
+    	flightdata.get_countries().length>0;
     });
   });
   describe('#get_history_by_tail_number()', function() {
-    xit('should return the flight history of the aircraft', function() {
-    	throw new Error("not implemented");
-    });
+    it('should return the flight history of the aircraft');
   });
   describe('#get_history_by_flight_number()', function() {
-    xit('should return the flight history of that flight number', function() {
-    	throw new Error("not implemented");
-    });
+    it('should return the flight history of that flight number');
   });
   describe('#get_info_by_tail_number()', function() {
-    xit('should return the flight info of that tail number', function() {
-      throw new Error("not implemented");
-    });
+    it('should return the flight info of that tail number');
   });
   describe('#get_flights()', function() {
-    xit('should return the flights for that airline', function() {
-      throw new Error("not implemented");
+    it('should return the flights for that airline', function() {
+      flightdata.get_flights('air india').length>0;
     });
   });
   describe('#get_fleet()', function() {
-    xit('should return the fleet details for that airline', function() {
-      throw new Error("not implemented");
-    });
+    it('should return the fleet details for that airline',);
   });
 });

@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cover": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
