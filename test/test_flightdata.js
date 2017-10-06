@@ -18,7 +18,9 @@ describe('FlightData - basic tests', function() {
     });
   });
   describe('#get_history_by_tail_number()', function() {
-    it('should return the flight history of the aircraft');
+    it('should return the flight history of the aircraft',function(){
+      flightdata.get_history_by_tail_number('9V-SMA').length>0;
+    });
   });
   describe('#get_history_by_flight_number()', function() {
     it('should return the flight history of that flight number');
