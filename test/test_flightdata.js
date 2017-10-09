@@ -23,10 +23,14 @@ describe('FlightData - basic tests', function() {
     });
   });
   describe('#get_history_by_flight_number()', function() {
-    it('should return the flight history of that flight number');
+    it('should return the flight history of that flight number',function(){
+      flightdata.get_history_by_tail_number('AI-101').length>0;
+    });
   });
   describe('#get_info_by_tail_number()', function() {
-    it('should return the flight info of that tail number');
+    it('should return the flight info of that tail number',function(){
+      flightdata.get_info_by_tail_number('AI-101').length>0;
+    });
   });
   describe('#get_flights()', function() {
     it('should return the flights for that airline', function() {
@@ -34,6 +38,8 @@ describe('FlightData - basic tests', function() {
     });
   });
   describe('#get_fleet()', function() {
-    it('should return the fleet details for that airline',);
+    it('should return the fleet details for that airline', function() {
+      flightdata.get_fleet('air india').length>0;
+    });
   });
 });
