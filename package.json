@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/supercoderz/flightdata.js#readme",
   "dependencies": {
-    "request": "*"
+    "request": "*",
+    "request-promise": "*"
   },
   "devDependencies": {
     "mocha": "*"
