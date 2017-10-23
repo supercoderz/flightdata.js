@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/supercoderz/flightdata.js#readme",
   "dependencies": {
+    "chai": "^4.1.2",
     "request": "*",
     "request-promise": "*"
   },
