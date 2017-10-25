@@ -1,15 +1,22 @@
-var assert = require('assert')
-var expect = require('Chai').expect
+var assert = require('chai').assert
+var should = require('chai').should()
 var common = require('../lib/common.js')
 
 
 describe('Common tests', function(){
 	describe('#get_page_or_none()',function(){
 		it('should return none for invalid page',function(){
-			assert.equal(common.get_page_or_none('http://invalid_url'),null)
+			common.get_page_or_none('http://invalid',function(res){
+			},function(err){
+				assert.equal(1,1)
+			})
 		})
-		xit('should retrun the page content for a valid page address',function(){
-			assert.notEqual(common.get_page_or_none('http://google.com'),null)
+		it('should retrun the page content for a valid page address',function(){
+			common.get_page_or_none('http://google.com',function(res){
+				should.exist(res)
+			},function(err){
+
+			})
 		})
 	})
 	describe('#get_raw_data_json()',function(){
