@@ -1,6 +1,7 @@
 var assert = require('chai').assert
 var should = require('chai').should()
 var common = require('../lib/common.js')
+var util = require('util')
 
 
 describe('Common tests', function(){
@@ -20,11 +21,14 @@ describe('Common tests', function(){
 		})
 	})
 	describe('#get_raw_data_json()',function(){
-		xit('should return non if the data from url is not json',function(){
-
-		})
-		xit('should return json data for a valid url', function () {
-			
+		it('should return json data for a valid url', function () {
+			common.get_raw_data_json('https://api.github.com/users/hari-allamraju/repos',
+				function(res){
+					should.exist(res)
+					should.exist(res[0].name)
+				},function (err) {
+					assert.fail(true,false,'')
+				})
 		})
 	})
 })
