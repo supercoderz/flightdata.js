@@ -27,7 +27,7 @@ describe('Common tests', function(){
 					should.exist(res)
 					should.exist(res[0].name)
 				},function (err) {
-					assert.fail(true,false,'')
+
 				})
 		})
 	})
