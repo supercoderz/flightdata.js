@@ -27,8 +27,15 @@ describe('Common tests', function(){
 					should.exist(res)
 					should.exist(res.ip)
 				},function (err) {
-
+					
 				})
+		})
+		it("should not throw an error when calling a non json url",function () {
+			common.get_raw_data_json('http://google.com',function(res){
+				should.exist(res)
+			},function(err){
+				
+			})
 		})
 	})
 })
