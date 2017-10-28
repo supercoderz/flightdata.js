@@ -22,10 +22,10 @@ describe('Common tests', function(){
 	})
 	describe('#get_raw_data_json()',function(){
 		it('should return json data for a valid url', function () {
-			common.get_raw_data_json('https://api.github.com/users/hari-allamraju/repos',
+			common.get_raw_data_json('http://ip.jsontest.com/',
 				function(res){
 					should.exist(res)
-					should.exist(res[0].name)
+					should.exist(res.ip)
 				},function (err) {
 
 				})
