@@ -16,7 +16,7 @@ describe('Common tests', function(){
 			common.get_page_or_none('http://google.com',function(res){
 				should.exist(res)
 			},function(err){
-
+				assert.fail(0, 1, 'unexpected error in response')
 			})
 		})
 	})
@@ -27,15 +27,25 @@ describe('Common tests', function(){
 					should.exist(res)
 					should.exist(res.ip)
 				},function (err) {
-					
+					assert.fail(0, 1, 'unexpected error in response')
 				})
 		})
 		it("should not throw an error when calling a non json url",function () {
 			common.get_raw_data_json('http://google.com',function(res){
 				should.exist(res)
 			},function(err){
-				
+				assert.fail(0, 1, 'unexpected error in response')
 			})
+		})
+	})
+	describe('#post()',function(){
+		xit('should post data to the page and have no error',function(){
+
+		})
+	})
+	describe('#login()',function(){
+		xit('should login and return a token',function(){
+
 		})
 	})
 })
