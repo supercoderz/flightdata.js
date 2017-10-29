@@ -3,6 +3,7 @@ var should = require('chai').should()
 var expect = require('chai').expect
 var common = require('../lib/common.js')
 var util = require('util')
+var fr24 = require('../lib/common_fr24.js')
 
 
 describe('Common tests', function(){
@@ -44,7 +45,7 @@ describe('Common tests', function(){
 			var data = {
 				email:'test@test.com'
 			}
-			common.post('https://www.flightradar24.com/user/login',data,function(res){
+			common.post(fr24.LOGIN_URL,data,function(res){
 				should.exist(res)
 			},function(err){
 				assert.fail(0, 1, 'unexpected error in response')
@@ -59,11 +60,6 @@ describe('Common tests', function(){
 			},function(err){
 				should.exist(err)
 			})
-		})
-	})
-	describe('#login()',function(){
-		xit('should login and return a token',function(){
-
 		})
 	})
 })
