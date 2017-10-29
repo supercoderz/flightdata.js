@@ -1,5 +1,6 @@
 var assert = require('chai').assert
 var should = require('chai').should()
+var expect = require('chai').expect
 var common = require('../lib/common.js')
 var util = require('util')
 
@@ -47,6 +48,16 @@ describe('Common tests', function(){
 				should.exist(res)
 			},function(err){
 				assert.fail(0, 1, 'unexpected error in response')
+			})
+		})
+		it('should post data to the page that doesnt support post and have an error',function(){
+			var data = {
+				q:'test@test.com'
+			}
+			common.post('http://google.com/search',data,function(res){
+				assert.fail(0, 1, 'unexpected valid response')
+			},function(err){
+				should.exist(err)
 			})
 		})
 	})
