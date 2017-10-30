@@ -15,4 +15,20 @@ describe('FR24 common tests',function(){
 			})
 		})
 	})
+	describe('#get_data(url)',function(){
+		it('should return the data for a flight route from the url in json format',function(){
+			fr24.get_data(fr24.FLT_BASE('AI101'),function(res){
+				should.exist(res)
+			},function(err){
+				assert.fail(0, 1, 'unexpected error in response')
+			})
+		})
+		it('should return the data for a aircraft reg from the url in json format',function(){
+			fr24.get_data(fr24.REG_BASE('9V-SMA'),function(res){
+				should.exist(res)
+			},function(err){
+				assert.fail(0, 1, 'unexpected error in response')
+			})
+		})
+	})
 })
