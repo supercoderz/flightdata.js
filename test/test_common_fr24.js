@@ -17,7 +17,7 @@ describe('FR24 common tests',function(){
 	})
 	describe('#get_data(url)',function(){
 		it('should return the data for a flight route from the url in json format',function(){
-			fr24.get_data(fr24.FLT_BASE('AI101'),function(res){
+			fr24.get_data(fr24.FLT_BASE('SQ11'),function(res){
 				should.exist(res)
 				should.exist(res.result.response.data)
 				assert.isAtMost(res.result.response.data.length,100)

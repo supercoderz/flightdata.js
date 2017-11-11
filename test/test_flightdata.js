@@ -1,4 +1,6 @@
 var assert = require('assert')
+var should = require('chai').should()
+
 var flightdata = require('../lib/flightdata.js')
 
 describe('FlightData - basic tests', function() {
@@ -19,27 +21,31 @@ describe('FlightData - basic tests', function() {
   })
   describe('#get_history_by_tail_number()', function() {
     it('should return the flight history of the aircraft',function(){
-      flightdata.get_history_by_tail_number('9V-SMA').length>0;
+    	flightdata.get_history_by_tail_number('9V-SMA').length>0;
     })
   })
   describe('#get_history_by_flight_number()', function() {
     it('should return the flight history of that flight number',function(){
-      flightdata.get_history_by_tail_number('AI-101').length>0;
+    	flightdata.get_history_by_flight_number('AI-101',function(res){
+			should.exist(res)
+    	},function(err){
+			assert.fail(0, 1, 'unexpected error in response')
+    	});
     })
   })
   describe('#get_info_by_tail_number()', function() {
     it('should return the flight info of that tail number',function(){
-      flightdata.get_info_by_tail_number('AI-101').length>0;
+    	flightdata.get_info_by_tail_number('9V-SMA').length>0;
     })
   })
   describe('#get_flights()', function() {
     it('should return the flights for that airline', function() {
-      flightdata.get_flights('air india').length>0;
+    	flightdata.get_flights('air india').length>0;
     })
   })
   describe('#get_fleet()', function() {
     it('should return the fleet details for that airline', function() {
-      flightdata.get_fleet('air india').length>0;
+    	flightdata.get_fleet('air india').length>0;
     })
   })
 })
